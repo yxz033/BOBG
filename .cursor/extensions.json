@@ -1,0 +1,26 @@
+{
+  "runOnStart": [
+    {
+      "name": "显示旧照片修复网站每日任务",
+      "command": "node cursor-daily-tasks.js",
+      "showOutput": true
+    }
+  ],
+  "projectScripts": [
+    {
+      "name": "查看今日任务",
+      "command": "node cursor-daily-tasks.js",
+      "showOutput": true
+    },
+    {
+      "name": "更新里程碑进度",
+      "command": "code milestone-checklist.md",
+      "showOutput": false
+    },
+    {
+      "name": "进行周进度回顾",
+      "command": "echo '开始进行周进度回顾...' && code milestone-checklist.md && node cursor-daily-tasks.js",
+      "showOutput": true
+    }
+  ]
+} 

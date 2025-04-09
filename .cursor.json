@@ -1,0 +1,216 @@
+{
+  "projectName": "旧照片修复网站",
+  "version": "1.0.0",
+  "description": "AI驱动的旧照片修复平台配置",
+  
+  "codeStyle": {
+    "javascript": {
+      "indent": 2,
+      "quotes": "single",
+      "semi": true,
+      "trailingComma": "es5",
+      "bracketSpacing": true,
+      "jsxBracketSameLine": false,
+      "arrowParens": "always",
+      "printWidth": 100
+    },
+    "typescript": {
+      "extends": "javascript",
+      "strictNullChecks": true,
+      "noImplicitAny": true
+    },
+    "css": {
+      "indent": 2,
+      "trimTrailingWhitespace": true
+    }
+  },
+  
+  "projectStructure": {
+    "src": {
+      "components": "React组件",
+      "pages": "Next.js页面",
+      "styles": "CSS/Tailwind样式",
+      "utils": "工具函数",
+      "lib": "外部库与API封装",
+      "hooks": "自定义React Hooks",
+      "config": "配置文件",
+      "types": "TypeScript类型定义",
+      "public": "静态资源"
+    }
+  },
+  
+  "namingConventions": {
+    "components": "PascalCase",
+    "functions": "camelCase",
+    "variables": "camelCase",
+    "constants": "UPPER_SNAKE_CASE",
+    "files": {
+      "components": "PascalCase",
+      "pages": "kebab-case",
+      "utils": "camelCase"
+    }
+  },
+  
+  "workflow": {
+    "mvpPriorities": [
+      "核心照片修复功能",
+      "简单用户界面",
+      "Google Analytics集成",
+      "基础SEO优化",
+      "广告位置"
+    ],
+    "dailyRoutine": {
+      "codeTime": 30,
+      "testingTime": 30,
+      "contentCreationTime": 30,
+      "communityEngagementTime": 30
+    },
+    "commitMessages": {
+      "feature": "feat: ",
+      "fix": "fix: ",
+      "chore": "chore: ",
+      "docs": "docs: ",
+      "style": "style: "
+    },
+    "milestoneTracking": {
+      "checklistFile": "milestone-checklist.md",
+      "startDate": "2025-04-09",
+      "startDateNote": "请替换为项目实际开始日期",
+      "displayDailyTasks": true,
+      "reminderFrequency": "daily",
+      "progressFormat": "[ ] → [x]",
+      "weeklyReviewDay": "Sunday",
+      "priorityLabels": {
+        "high": "🔴",
+        "medium": "🟠",
+        "low": "🟢"
+      }
+    }
+  },
+  
+  "seo": {
+    "priorityKeywords": [
+      "photo restoration",
+      "old photo repair",
+      "AI photo restoration",
+      "restore old photos",
+      "fix damaged photographs"
+    ],
+    "metaTags": {
+      "title": "限制在60个字符内",
+      "description": "限制在160个字符内",
+      "requiredTags": [
+        "title",
+        "description",
+        "viewport",
+        "robots"
+      ]
+    }
+  },
+  
+  "accessibility": {
+    "minimumContrastRatio": 4.5,
+    "requireAltTags": true,
+    "keyboardNavigable": true
+  },
+  
+  "performance": {
+    "maxImageSize": "1MB",
+    "lazyLoadImages": true,
+    "preferWebP": true,
+    "minifyAssets": true
+  },
+  
+  "deployment": {
+    "vercel": {
+      "autoDeployBranch": "main",
+      "environmentVariables": [
+        "REPLICATE_API_KEY",
+        "CLOUDINARY_CLOUD_NAME",
+        "CLOUDINARY_API_KEY",
+        "CLOUDINARY_API_SECRET"
+      ]
+    },
+    "preDeploymentChecks": [
+      "确认所有环境变量已设置",
+      "确认API密钥有效",
+      "测试核心照片上传和修复功能",
+      "检查主页SEO元标签"
+    ]
+  },
+  
+  "dailyTasks": {
+    "development": [
+      "优先实现每周计划中的关键功能",
+      "解决高优先级错误",
+      "优化已完成功能"
+    ],
+    "testing": [
+      "测试当日实现的功能",
+      "测试不同浏览器的兼容性",
+      "测试移动端响应式设计"
+    ],
+    "content": [
+      "准备案例展示",
+      "创建用户指南",
+      "优化营销文案"
+    ],
+    "community": [
+      "回复用户反馈",
+      "参与相关Reddit社区讨论",
+      "分析使用数据"
+    ]
+  },
+  
+  "timelineCheckpoints": {
+    "day7": "完成基本项目设置",
+    "day14": "实现核心照片上传和处理",
+    "day21": "完成基本用户界面",
+    "day30": "完成MVP基础功能",
+    "day45": "完成SEO基础优化",
+    "day60": "初步广告集成与社区推广"
+  },
+  
+  "resources": {
+    "documentation": [
+      "develop.md - 开发文档",
+      "marketing_growth_strategy.md - 营销策略",
+      "milestone-checklist.md - 里程碑进度清单"
+    ],
+    "apis": [
+      "Replicate - GFPGAN模型",
+      "Cloudinary - 图像存储",
+      "Google Analytics - 用户分析"
+    ],
+    "tools": [
+      "Vercel - 部署平台",
+      "GitHub - 代码版本控制",
+      "腾讯云 - GPU工作空间"
+    ]
+  },
+  
+  "optimizations": {
+    "tensorCloudUsage": {
+      "autoShutdownAfterHours": 6,
+      "scheduledTasks": "低峰处理",
+      "monitorResource": true
+    },
+    "imageProcessing": {
+      "maxInputSize": "5MB",
+      "optimizeBeforeProcessing": true,
+      "cachingStrategy": "cloudinary"
+    }
+  },
+  
+  "cursorIntegration": {
+    "milestoneTracking": true,
+    "showDailyTasks": true,
+    "taskNotifications": true,
+    "progressReminders": true,
+    "taskPrioritization": true,
+    "showCompletionStatus": true,
+    "milestoneSummaryOnOpen": true,
+    "checklistFile": "milestone-checklist.md",
+    "weeklyProgressReview": true
+  }
+} 
