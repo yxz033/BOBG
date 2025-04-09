@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { UrlBuilder } from '@bytescale/sdk';
 import {
   UploadWidgetConfig,
@@ -19,6 +19,19 @@ import NSFWFilter from 'nsfw-filter';
 import { useSession, signIn } from 'next-auth/react';
 import useSWR from 'swr';
 import { Rings } from 'react-loader-spinner';
+
+// 添加Google Analytics事件跟踪函数
+const trackEvent = (eventName: string, eventParams = {}) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', eventName, eventParams);
+  }
+};
+
+declare global {
+  interface Window {
+    gtag: any;
+  }
+}
 
 const Home: NextPage = () => {
   const [originalPhoto, setOriginalPhoto] = useState<string | null>(null);
@@ -78,6 +91,12 @@ const Home: NextPage = () => {
           });
           setPhotoName(imageName);
           setOriginalPhoto(imageUrl);
+          
+          // 跟踪照片上传事件
+          trackEvent('photo_upload', {
+            file_name: imageName
+          });
+          
           generatePhoto(imageUrl);
         }
       }}
@@ -101,12 +120,36 @@ const Home: NextPage = () => {
     let newPhoto = await res.json();
     if (res.status !== 200) {
       setError(newPhoto);
+      
+      // 跟踪错误事件
+      trackEvent('restoration_error', {
+        error_message: newPhoto
+      });
     } else {
       mutate();
       setRestoredImage(newPhoto);
+      
+      // 跟踪照片修复完成事件
+      trackEvent('photo_restore_complete', {
+        original_image: fileUrl,
+        restored_image: newPhoto
+      });
     }
     setLoading(false);
   }
+
+  // 监听修复图片加载完成
+  useEffect(() => {
+    if (restoredImage) {
+      const img = new globalThis.Image();
+      img.src = restoredImage;
+      img.onload = () => {
+        setRestoredLoaded(true);
+        // 跟踪图片加载完成事件
+        trackEvent('restored_image_loaded', {});
+      };
+    }
+  }, [restoredImage]);
 
   return (
     <div className='flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen'>

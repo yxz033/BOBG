@@ -80,6 +80,20 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        
+        {/* 用户反馈表单链接 */}
+        <div className="w-full max-w-2xl mx-auto my-8 p-4 bg-gray-50 rounded-xl">
+          <h2 className="text-xl font-bold mb-2">我们重视您的反馈</h2>
+          <p className="text-gray-600 mb-4">帮助我们改进照片修复服务，分享您的体验和建议</p>
+          <a 
+            href="https://forms.gle/9xdZFSuW8HNPQqvU8" 
+            target="_blank" 
+            rel="noreferrer"
+            className="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+          >
+            提交反馈
+          </a>
+        </div>
       </main>
       <Testimonials />
       <Footer />
