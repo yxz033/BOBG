@@ -5,13 +5,13 @@
 ## 技术开发里程碑
 
 ### MVP阶段第1周 (天1-7)：项目设置
-- [ ] 克隆RestorePhotos项目并熟悉代码
-- [ ] 配置Replicate API和GFPGAN模型
-- [ ] 设置Cloudinary存储
-- [ ] 配置基本的前端界面
-- [ ] 创建环境变量文件(.env)
-- [ ] 提交初始代码到GitHub仓库
-- [ ] 在Vercel上完成基础部署
+- [x] 克隆RestorePhotos项目并熟悉代码
+- [x] 配置Replicate API和GFPGAN模型
+- [x] 设置Cloudinary存储
+- [x] 配置基本的前端界面
+- [x] 创建环境变量文件(.env)
+- [x] 提交初始代码到GitHub仓库
+- [x] 在Vercel上完成基础部署
 
 ### MVP阶段第2周 (天8-14)：核心功能实现
 - [ ] 实现照片上传功能
@@ -32,7 +32,7 @@
 - [ ] 添加简单的使用指南
 
 ### MVP阶段第4周 (天22-30)：分析与反馈
-- [ ] 安装Google Analytics
+- [x] 安装Google Analytics
 - [ ] 设置基本转化跟踪
 - [ ] 添加用户反馈表单
 - [ ] 实现简单的错误日志记录
@@ -79,7 +79,7 @@
 ## 营销与增长里程碑
 
 ### MVP阶段第1周 (天1-7)：分析设置
-- [ ] 安装Google Analytics
+- [x] 安装Google Analytics
 - [ ] 设置转化目标(照片上传、处理完成)
 - [ ] 配置事件跟踪
 - [ ] 创建基础用户反馈表单
